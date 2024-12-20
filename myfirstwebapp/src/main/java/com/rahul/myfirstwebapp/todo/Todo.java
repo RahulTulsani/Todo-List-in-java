@@ -4,12 +4,19 @@ import java.time.LocalDate;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
-
+@Entity()
 public class Todo {
 
+	@Id
+	@GeneratedValue
 	private int id;
+	
 	private String username;
 	
 	@Size(min=5, message="Enter atleast 5 character")
